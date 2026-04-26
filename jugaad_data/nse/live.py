@@ -241,3 +241,9 @@ class NSELive:
             payload['symbol'] = symbol
         return self.get("corporate_announcements", payload)
 
+def stock_price(self, symbol):
+        """Returns just the last traded price as a number.
+        Example: n.stock_price('TCS') → 3650.5
+        """
+        quote = self.stock_quote(symbol)
+        return quote['priceInfo']['lastPrice']
